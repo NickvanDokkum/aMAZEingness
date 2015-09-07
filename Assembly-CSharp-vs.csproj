@@ -46,8 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Art\FloorSelecter.cs" />
      <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />
+     <Compile Include="Assets\Scripts\Misc\Chest.cs" />
+     <Compile Include="Assets\Scripts\Misc\Traps\FireSpitter.cs" />
      <Compile Include="Assets\Scripts\Movement\Movement.cs" />
+     <Compile Include="Assets\Scripts\Movement\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\UI\InGame\HPbar.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
