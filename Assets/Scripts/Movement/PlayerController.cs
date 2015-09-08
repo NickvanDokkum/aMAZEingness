@@ -31,15 +31,16 @@ public class PlayerController : MonoBehaviour {
         }
         if (moveHorizontal != 0) {
             if (moveVerticle != 0) {
-                moveHorizontal /= 1.5f;
+                moveHorizontal /= 1.35f;
             }
 
         }
         if (moveVerticle != 0) {
             if (moveHorizontal != 0) {
-                moveVerticle /= 1.5f;
+                moveVerticle /= 1.35f;
             }
         }
-        movement.Move(moveHorizontal, moveVerticle);
+        Vector2 movementVector = new Vector2(moveHorizontal, moveVerticle);
+        movement.Move(movementVector);
     }
 }

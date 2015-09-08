@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-    int speed = 3;
+    public int speed = 3;
     
-    public void Move(float hor, float ver) {
-        transform.Translate(Vector2.up * Time.deltaTime * ver * speed);
-        transform.Translate(Vector2.right * Time.deltaTime * hor * speed);
+    public void Move(Vector2 movement) {
+        transform.Translate(Vector2.up * Time.deltaTime * movement.y * speed);
+        transform.Translate(Vector2.right * Time.deltaTime * movement.x * speed);
     }
 }

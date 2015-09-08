@@ -6,7 +6,7 @@ public class HPbar : MonoBehaviour {
 
     Image image;
     public Sprite[] sprites;
-    int HP;
+    int HP = 4;
 
     void Start() {
         image = GetComponent<Image>();

@@ -14,7 +14,7 @@ public class Health : MonoBehaviour {
 
     void Damage(int damage) {
         HP -= damage;
-        Debug.Log(HP);
+        Debug.Log(gameObject.name + HP);
         if (HP <= 0) {
             Death();
         }
@@ -28,6 +28,7 @@ public class Health : MonoBehaviour {
         }
         else if (other.gameObject.tag == "HPpickup" && HP < 5) {
             hpbar.ChangeHP(false);
+            HP++;
             Destroy(other.gameObject);
         }
     }
