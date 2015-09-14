@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Art\FloorSelecter.cs" />
+     <Compile Include="Assets\Scripts\DungeonGeneration\SpawnDungeonTiles.cs" />
+     <Compile Include="Assets\Scripts\DungeonGeneration\TileRandomization.cs" />
+     <Compile Include="Assets\Scripts\DungeonGeneration\WallSelector.cs" />
      <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />
      <Compile Include="Assets\Scripts\Misc\Chest.cs" />
      <Compile Include="Assets\Scripts\Misc\Traps\FireSpitter.cs" />

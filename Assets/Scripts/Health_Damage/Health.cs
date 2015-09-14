@@ -25,6 +25,7 @@ public class Health : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy" && gameObject.tag == "Player"){
             Damage(1);
+            Debug.Log(other.gameObject.name);
         }
         else if (other.gameObject.tag == "HPpickup" && HP < 5) {
             hpbar.ChangeHP(false);
