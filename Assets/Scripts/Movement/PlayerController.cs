@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour {
             if (moveVerticle != 0) {
                 moveHorizontal /= 1.35f;
             }
-
         }
         if (moveVerticle != 0) {
             if (moveHorizontal != 0) {

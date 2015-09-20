@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b54f7eae86ba7ed4585f2190c8335b91
-timeCreated: 1441707125
+timeCreated: 1442338669
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,7 +59,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
+        width: 32
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -67,9 +67,9 @@ TextureImporter:
     - name: Eddie_HP_Sheet_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 31
+        width: 32
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -77,9 +77,9 @@ TextureImporter:
     - name: Eddie_HP_Sheet_2
       rect:
         serializedVersion: 2
-        x: 62
+        x: 64
         y: 0
-        width: 31
+        width: 32
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -87,9 +87,9 @@ TextureImporter:
     - name: Eddie_HP_Sheet_3
       rect:
         serializedVersion: 2
-        x: 93
+        x: 96
         y: 0
-        width: 31
+        width: 32
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -97,9 +97,9 @@ TextureImporter:
     - name: Eddie_HP_Sheet_4
       rect:
         serializedVersion: 2
-        x: 124
+        x: 128
         y: 0
-        width: 31
+        width: 32
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}

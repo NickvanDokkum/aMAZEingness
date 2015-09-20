@@ -12,7 +12,12 @@ public class SpawnDungeonTiles : MonoBehaviour {
     public GameObject Player;
     public GameObject Exit;
 
-	void Awake () {
+    public void Awake() {
+        TileAmount = PlayerPrefs.GetInt("TileAmount");
+        if (TileAmount < 100) {
+            TileAmount = 100;
+            PlayerPrefs.SetInt("TileAmount", 100);
+        }
         Coordinates = new List<Vector3>();
         Vector3 spawnPos = new Vector3(transform.position.x,transform.position.y,Player.transform.position.z);
         Instantiate(Player, spawnPos, transform.rotation);
@@ -45,7 +50,7 @@ public class SpawnDungeonTiles : MonoBehaviour {
         Instantiate(Exit, spawnPos, transform.rotation);
 	}
     void Update() {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
     public bool PlaceFree(Vector2 position) {
         if(Coordinates.Contains(position)){

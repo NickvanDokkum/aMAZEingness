@@ -39,5 +39,8 @@ public class Health : MonoBehaviour {
             Destroy(this.gameObject);
             Destroy(this);
         }
+        else {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 }

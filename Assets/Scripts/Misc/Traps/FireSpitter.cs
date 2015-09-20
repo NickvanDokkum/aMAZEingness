@@ -10,6 +10,12 @@ public class FireSpitter : MonoBehaviour {
     BoxCollider2D collider;
 
     void Start() {
+        if (curSprite == 0) {
+            curSprite = Random.Range(-3, 4);
+            if (curSprite > 0) {
+                curUp = false;
+            }
+        }
         InvokeRepeating("ChangeFire", 0.25f, 0.25f);
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
