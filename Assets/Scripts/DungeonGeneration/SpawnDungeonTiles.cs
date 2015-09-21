@@ -4,56 +4,61 @@ using System.Collections.Generic;
 
 public class SpawnDungeonTiles : MonoBehaviour {
 
-    List<Vector3> Coordinates;
-    public int TileWidth;
-    public int TileHeight;
-    public int TileAmount;
-    public GameObject Tile;
-    public GameObject Player;
-    public GameObject Exit;
+    List<Vector2> coordinates;
+    public int tileWidth;
+    public int tileHeight;
+    public int tileAmount;
+    public GameObject tile;
+    public GameObject saveTile;
+    public GameObject player;
+    public GameObject exit;
 
     public void Awake() {
-        TileAmount = PlayerPrefs.GetInt("TileAmount");
-        if (TileAmount < 100) {
-            TileAmount = 100;
-            PlayerPrefs.SetInt("TileAmount", 100);
+        tileAmount = PlayerPrefs.GetInt("tileAmount");
+        if (tileAmount < 100) {
+            tileAmount = 100;
+            PlayerPrefs.SetInt("tileAmount", 100);
         }
-        Coordinates = new List<Vector3>();
-        Vector3 spawnPos = new Vector3(transform.position.x,transform.position.y,Player.transform.position.z);
-        Instantiate(Player, spawnPos, transform.rotation);
-        spawnPos.z = Tile.transform.position.z;
-        GameObject temp = Instantiate(Tile, spawnPos, transform.rotation) as GameObject;
-        temp.SendMessage("StopItems");
-        Coordinates.Add(spawnPos);
-        for (int i = 0; i < TileAmount;) {
+        coordinates = new List<Vector2>();
+        Vector3 spawnPos = new Vector3(transform.position.x,transform.position.y,player.transform.position.z);
+        Instantiate(player, spawnPos, transform.rotation);
+        spawnPos.z = tile.transform.position.z;
+        Instantiate(saveTile, spawnPos, transform.rotation);
+        coordinates.Add(new Vector2(spawnPos.x, spawnPos.y));
+        for (int i = 0; i < tileAmount;) {
             int R = Random.Range(0, 4);
             if (R == 0) {       //UP
-                transform.Translate(Vector3.up * TileHeight);
+                transform.Translate(Vector3.up * tileHeight);
             }
             else if (R == 1) {  //RIGHT
-                transform.Translate(Vector3.right * TileWidth);
+                transform.Translate(Vector3.right * tileWidth);
             }
             else if (R == 2) {  //DOWN
-                transform.Translate(Vector3.down * TileHeight);
+                transform.Translate(Vector3.down * tileHeight);
             }
             else {              //LEFT
-                transform.Translate(Vector3.left * TileWidth);
+                transform.Translate(Vector3.left * tileWidth);
             }
             spawnPos.x = transform.position.x; spawnPos.y = transform.position.y;
             if (PlaceFree(new Vector2(spawnPos.x, spawnPos.y))) {
-                Instantiate(Tile, spawnPos, transform.rotation);
-                Coordinates.Add(new Vector2(spawnPos.x, spawnPos.y));
+                if (i != tileAmount -1) {
+                    Instantiate(tile, spawnPos, transform.rotation);
+                }
+                else {
+                    Instantiate(saveTile, spawnPos, transform.rotation);
+                }
+                coordinates.Add(new Vector2(spawnPos.x, spawnPos.y));
                 i++;
             }
         }
-        spawnPos.z = Exit.transform.position.z;
-        Instantiate(Exit, spawnPos, transform.rotation);
+        spawnPos.z = exit.transform.position.z;
+        Instantiate(exit, spawnPos, transform.rotation);
 	}
     void Update() {
         Destroy(this.gameObject);
     }
     public bool PlaceFree(Vector2 position) {
-        if(Coordinates.Contains(position)){
+        if(coordinates.Contains(position)){
             return (false);
         }
         else {
@@ -61,6 +66,6 @@ public class SpawnDungeonTiles : MonoBehaviour {
         }
     }
     public void AddCoord(Vector2 coord) {
-        Coordinates.Add(coord);
+        coordinates.Add(coord);
     }
 }

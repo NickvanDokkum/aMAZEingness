@@ -7,7 +7,7 @@ public class TileRandomization : MonoBehaviour {
     public GameObject Chest;
     public GameObject Enemy;
     public GameObject FireSpitter;
-    bool NoItems = false;
+    public bool NoItems = false;
 
     void Start() {
         //Walls
@@ -36,20 +36,17 @@ public class TileRandomization : MonoBehaviour {
             int Item = Random.Range(0, 100);
             spawnPos = gameObject.transform.position;
             spawnPos.z -= 5;
-            if (Item < 5) {
+            if (Item < 1) {
                 Instantiate(Chest, spawnPos, transform.rotation);
             }
-            else if (Item < 10) {
-                //Instantiate(Enemy, transform.position, transform.rotation);
+            else if (Item < 6) {
+                Instantiate(Enemy, spawnPos, transform.rotation);
             }
-            else if (Item < 20) {
+            else if (Item < 21) {
                 Instantiate(FireSpitter, spawnPos, transform.rotation);
             }
         }
 
         Destroy(this);
-    }
-    void StopItems() {
-        NoItems = true;
     }
 }

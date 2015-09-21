@@ -10,9 +10,9 @@ public class AI : MonoBehaviour {
 
     void Start() {
         movement = GetComponent<Movement>();
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        player = GameObject.Find("Player(Clone)").GetComponent<Transform>();
         Vector2 difference = player.position - transform.position;
-        if (difference.x < 5 && difference.x > -5 && difference.y < 5 && difference.y > -5) {
+        if (difference.x < 6 && difference.x > -6 && difference.y < 6 && difference.y > -6) {
             Destroy(this.gameObject);
         }
     }

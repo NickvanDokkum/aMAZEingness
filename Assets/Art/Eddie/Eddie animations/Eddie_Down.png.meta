@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fffd54cac0e7fb84cab39c726d724e95
-timeCreated: 1441268243
+timeCreated: 1442818747
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -56,7 +56,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 25
+        width: 26
         height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -64,9 +64,9 @@ TextureImporter:
     - name: Eddie_Down_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 26
         y: 0
-        width: 25
+        width: 26
         height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
