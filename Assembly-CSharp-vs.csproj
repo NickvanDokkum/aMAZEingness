@@ -54,6 +54,8 @@
      <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />
      <Compile Include="Assets\Scripts\Misc\Chest.cs" />
      <Compile Include="Assets\Scripts\Misc\Exit.cs" />
+     <Compile Include="Assets\Scripts\Misc\HPPickup.cs" />
+     <Compile Include="Assets\Scripts\Misc\Traps\BearTrap.cs" />
      <Compile Include="Assets\Scripts\Misc\Traps\FireSpitter.cs" />
      <Compile Include="Assets\Scripts\Movement\AI.cs" />
      <Compile Include="Assets\Scripts\Movement\Movement.cs" />

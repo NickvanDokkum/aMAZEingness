@@ -11,13 +11,9 @@ public class AI : MonoBehaviour {
     void Start() {
         movement = GetComponent<Movement>();
         player = GameObject.Find("Player(Clone)").GetComponent<Transform>();
-        Vector2 difference = player.position - transform.position;
-        if (difference.x < 6 && difference.x > -6 && difference.y < 6 && difference.y > -6) {
-            Destroy(this.gameObject);
-        }
     }
 
-    void FixedUpdate() {
+    void Update() {
         Vector2 difference = player.position - transform.position;
         if (difference.x < 5 && difference.x > -5 && difference.y < 5 && difference.y > -5) {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, difference);
@@ -32,8 +28,6 @@ public class AI : MonoBehaviour {
         else {
             movementVector = new Vector2(0, 0);
         }
-    }
-    void Update() {
         movement.Move(movementVector);
     }
 }

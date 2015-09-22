@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: a62ad62fa68602247b0f741b629d16fd
-timeCreated: 1442819090
+timeCreated: 1442835722
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: DBear_Left_0
     21300002: DBear_Left_1
+    21300004: DBear_Left_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,7 +57,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 1
-        width: 16
+        width: 15
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -66,7 +67,17 @@ TextureImporter:
         serializedVersion: 2
         x: 16
         y: 1
-        width: 16
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DBear_Left_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 14
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}

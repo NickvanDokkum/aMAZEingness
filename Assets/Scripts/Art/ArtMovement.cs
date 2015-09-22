@@ -6,18 +6,28 @@ public class ArtMovement : MonoBehaviour {
     public Sprite[] sprites;
     Movement movementScript;
     SpriteRenderer spriteRenderer;
+    Vector2 lastMovement;
 
     void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         movementScript = GetComponent<Movement>();
-        InvokeRepeating("ChangeMovementArt", 0, 0.25f);
+        spriteRenderer.sprite = sprites[Random.Range(0, 4) * 3];
+        InvokeRepeating("ChangeMovementArt", 0.25f, 0.25f);
+    }
+
+    void Update() {
+        if (lastMovement != movementScript.movementVector) {
+            CancelInvoke("ChangeMovementArt");
+            InvokeRepeating("ChangeMovementArt", 0, 0.25f);
+            lastMovement = movementScript.movementVector;
+        }
     }
 
     void ChangeMovementArt() {
         Vector2 movement = movementScript.movementVector;
         Vector2 originalMovement = movement;
         bool moveVerticle = true;
-        if (movement.y != 0) {
+        if (movement.y != 0 || movement.x != 0) {
             if (movement.y < 0) {
                 movement.y = -movement.y;
             }
@@ -28,7 +38,7 @@ public class ArtMovement : MonoBehaviour {
                 moveVerticle = false;
             }
             if (moveVerticle) {
-                if (originalMovement.y > 0) {
+                if (originalMovement.y > 0) {       //up
                     if (spriteRenderer.sprite == sprites[1]) {
                         spriteRenderer.sprite = sprites[2];
                     }
@@ -36,7 +46,7 @@ public class ArtMovement : MonoBehaviour {
                         spriteRenderer.sprite = sprites[1];
                     }
                 }
-                else if (originalMovement.y < 0) {
+                else if (originalMovement.y < 0) {  //down
                     if (spriteRenderer.sprite == sprites[4]) {
                         spriteRenderer.sprite = sprites[5];
                     }
@@ -46,7 +56,7 @@ public class ArtMovement : MonoBehaviour {
                 }
             }
             else {
-                if (originalMovement.x > 0) {
+                if (originalMovement.x > 0) {       //right
                     if (spriteRenderer.sprite == sprites[7]) {
                         spriteRenderer.sprite = sprites[8];
                     }
@@ -54,7 +64,7 @@ public class ArtMovement : MonoBehaviour {
                         spriteRenderer.sprite = sprites[7];
                     }
                 }
-                else if (originalMovement.x < 0) {
+                else if (originalMovement.x < 0) {  //left
                     if (spriteRenderer.sprite == sprites[10]) {
                         spriteRenderer.sprite = sprites[11];
                     }

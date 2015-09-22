@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 7f9aac9cb1450db438371368d8b34de1
-timeCreated: 1442336454
+timeCreated: 1442834356
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Banana_Trap_0
     21300002: Banana_Trap_1
+    21300004: Banana_Trap_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -45,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -57,18 +58,28 @@ TextureImporter:
         x: 0
         y: 0
         width: 20
-        height: 20
-      alignment: 0
+        height: 13
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Banana_Trap_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 24
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Banana_Trap_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 12
+        height: 15
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 

@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 77633eb4642926f4986826092f2b96d8
-timeCreated: 1442818844
+timeCreated: 1442834471
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Eddie_Right_0
     21300002: Eddie_Right_1
+    21300004: Eddie_Right_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,7 +57,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 19
+        width: 17
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -66,7 +67,17 @@ TextureImporter:
         serializedVersion: 2
         x: 19
         y: 0
-        width: 19
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Eddie_Right_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 18
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}

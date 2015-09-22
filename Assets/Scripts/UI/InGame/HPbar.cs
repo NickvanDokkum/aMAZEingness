@@ -19,6 +19,8 @@ public class HPbar : MonoBehaviour {
         else {
             HP += 1;
         }
-        image.sprite = sprites[HP];
+        if (HP >= 0) {
+            image.sprite = sprites[HP];
+        }
     }
 }

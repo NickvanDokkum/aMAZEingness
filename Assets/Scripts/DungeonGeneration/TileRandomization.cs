@@ -3,47 +3,48 @@ using System.Collections;
 
 public class TileRandomization : MonoBehaviour {
 
-    public GameObject Wall;
-    public GameObject Chest;
-    public GameObject Enemy;
-    public GameObject FireSpitter;
-    public bool NoItems = false;
+    public GameObject wall;
+    public GameObject chest;
+    public GameObject bear;
+    public GameObject firespitter;
+    public GameObject bearTrap;
+    public bool noItems = false;
 
     void Start() {
-        //Walls
+        //walls
         Vector3 spawnPos = transform.position;
         spawnPos.x -= 2;
         spawnPos.y += 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y -= 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y -= 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y += 4;
         spawnPos.x += 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y -= 4;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y += 4;
         spawnPos.x += 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y -= 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
+        Instantiate(wall, spawnPos, transform.rotation);
         spawnPos.y -= 2;
-        Instantiate(Wall, spawnPos, transform.rotation);
-        if (!NoItems) {
+        Instantiate(wall, spawnPos, transform.rotation);
+        if (!noItems) {
             //Placing Random Stuff
             int Item = Random.Range(0, 100);
             spawnPos = gameObject.transform.position;
             spawnPos.z -= 5;
             if (Item < 1) {
-                Instantiate(Chest, spawnPos, transform.rotation);
-            }
-            else if (Item < 6) {
-                Instantiate(Enemy, spawnPos, transform.rotation);
+                Instantiate(chest, spawnPos, transform.rotation);
             }
             else if (Item < 21) {
-                Instantiate(FireSpitter, spawnPos, transform.rotation);
+                Instantiate(firespitter, spawnPos, transform.rotation);
+            }
+            else if (Item < 26) {
+                Instantiate(bearTrap, spawnPos, transform.rotation);
             }
         }
 
