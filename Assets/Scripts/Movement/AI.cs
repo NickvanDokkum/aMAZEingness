@@ -10,7 +10,7 @@ public class AI : MonoBehaviour {
 
     void Start() {
         movement = GetComponent<Movement>();
-        player = GameObject.Find("Player(Clone)").GetComponent<Transform>();
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     void Update() {

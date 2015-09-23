@@ -7,7 +7,7 @@ public class FireSpitter : MonoBehaviour {
     SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     bool curUp = true;
-    BoxCollider2D collider;
+    BoxCollider2D theCollider;
 
     void Start() {
         if (curSprite == 0) {
@@ -18,7 +18,7 @@ public class FireSpitter : MonoBehaviour {
         }
         InvokeRepeating("ChangeFire", 0.25f, 0.25f);
         spriteRenderer = GetComponent<SpriteRenderer>();
-        collider = GetComponent<BoxCollider2D>();
+        theCollider = GetComponent<BoxCollider2D>();
     }
 
     void ChangeFire() {
@@ -35,10 +35,10 @@ public class FireSpitter : MonoBehaviour {
             }
         }
         if (curSprite < 1) {
-            collider.enabled = false;
+            theCollider.enabled = false;
         }
         else {
-            collider.enabled = true;
+            theCollider.enabled = true;
         }
         if (curSprite >= 0) {
             spriteRenderer.sprite = sprites[curSprite];
