@@ -50,6 +50,11 @@ public class Health : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D other) {
+        if (gameObject.tag == "Enemy" && other.gameObject.tag == "Attack") {
+            Damage(1);
+        }
+    }
 
     void Death() {
         if (tag != "Player") {

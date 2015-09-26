@@ -7,6 +7,7 @@ public class ArtMovement : MonoBehaviour {
     Movement movementScript;
     SpriteRenderer spriteRenderer;
     Vector2 lastMovement;
+    public bool stop = false;
 
     void Start() {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -17,75 +18,87 @@ public class ArtMovement : MonoBehaviour {
 
     void Update() {
         if (lastMovement != movementScript.movementVector) {
-            CancelInvoke("ChangeMovementArt");
-            InvokeRepeating("ChangeMovementArt", 0, 0.25f);
-            lastMovement = movementScript.movementVector;
+            RestartMovementArt();
         }
+    }
+    void RestartMovementArt() {
+        CancelInvoke("ChangeMovementArt");
+        InvokeRepeating("ChangeMovementArt", 0, 0.25f);
+        lastMovement = movementScript.movementVector;
+    }
+    void AttackStart() {
+        stop = true;
+    }
+    void EndAttack() {
+        stop = false;
+        RestartMovementArt();
     }
 
     void ChangeMovementArt() {
-        Vector2 movement = movementScript.movementVector;
-        Vector2 originalMovement = movement;
-        bool moveVerticle = true;
-        if (movement.y != 0 || movement.x != 0) {
-            if (movement.y < 0) {
-                movement.y = -movement.y;
-            }
-            if (movement.x < 0) {
-                movement.x = -movement.x;
-            }
-            if(movement.y < movement.x){
-                moveVerticle = false;
-            }
-            if (moveVerticle) {
-                if (originalMovement.y > 0) {       //up
-                    if (spriteRenderer.sprite == sprites[1]) {
-                        spriteRenderer.sprite = sprites[2];
+        if (!stop) {
+            Vector2 movement = movementScript.movementVector;
+            Vector2 originalMovement = movement;
+            bool moveVerticle = true;
+            if (movement.y != 0 || movement.x != 0) {
+                if (movement.y < 0) {
+                    movement.y = -movement.y;
+                }
+                if (movement.x < 0) {
+                    movement.x = -movement.x;
+                }
+                if (movement.y < movement.x) {
+                    moveVerticle = false;
+                }
+                if (moveVerticle) {
+                    if (originalMovement.y > 0) {       //up
+                        if (spriteRenderer.sprite == sprites[1]) {
+                            spriteRenderer.sprite = sprites[2];
+                        }
+                        else {
+                            spriteRenderer.sprite = sprites[1];
+                        }
                     }
-                    else {
-                        spriteRenderer.sprite = sprites[1];
+                    else if (originalMovement.y < 0) {  //down
+                        if (spriteRenderer.sprite == sprites[4]) {
+                            spriteRenderer.sprite = sprites[5];
+                        }
+                        else {
+                            spriteRenderer.sprite = sprites[4];
+                        }
                     }
                 }
-                else if (originalMovement.y < 0) {  //down
-                    if (spriteRenderer.sprite == sprites[4]) {
-                        spriteRenderer.sprite = sprites[5];
+                else {
+                    if (originalMovement.x > 0) {       //right
+                        if (spriteRenderer.sprite == sprites[7]) {
+                            spriteRenderer.sprite = sprites[8];
+                        }
+                        else {
+                            spriteRenderer.sprite = sprites[7];
+                        }
                     }
-                    else {
-                        spriteRenderer.sprite = sprites[4];
+                    else if (originalMovement.x < 0) {  //left
+                        if (spriteRenderer.sprite == sprites[10]) {
+                            spriteRenderer.sprite = sprites[11];
+                        }
+                        else {
+                            spriteRenderer.sprite = sprites[10];
+                        }
                     }
                 }
             }
             else {
-                if (originalMovement.x > 0) {       //right
-                    if (spriteRenderer.sprite == sprites[7]) {
-                        spriteRenderer.sprite = sprites[8];
-                    }
-                    else {
-                        spriteRenderer.sprite = sprites[7];
-                    }
+                if (spriteRenderer.sprite == sprites[1] || spriteRenderer.sprite == sprites[2]) {
+                    spriteRenderer.sprite = sprites[0];
                 }
-                else if (originalMovement.x < 0) {  //left
-                    if (spriteRenderer.sprite == sprites[10]) {
-                        spriteRenderer.sprite = sprites[11];
-                    }
-                    else {
-                        spriteRenderer.sprite = sprites[10];
-                    }
+                else if (spriteRenderer.sprite == sprites[4] || spriteRenderer.sprite == sprites[5]) {
+                    spriteRenderer.sprite = sprites[3];
                 }
-            }
-        }
-        else {
-            if (spriteRenderer.sprite == sprites[1] || spriteRenderer.sprite == sprites[2]) {
-                spriteRenderer.sprite = sprites[0];
-            }
-            else if (spriteRenderer.sprite == sprites[4] || spriteRenderer.sprite == sprites[5]) {
-                spriteRenderer.sprite = sprites[3];
-            }
-            else if (spriteRenderer.sprite == sprites[7] || spriteRenderer.sprite == sprites[8]) {
-                spriteRenderer.sprite = sprites[6];
-            }
-            else if (spriteRenderer.sprite == sprites[10] || spriteRenderer.sprite == sprites[11]) {
-                spriteRenderer.sprite = sprites[9];
+                else if (spriteRenderer.sprite == sprites[7] || spriteRenderer.sprite == sprites[8]) {
+                    spriteRenderer.sprite = sprites[6];
+                }
+                else if (spriteRenderer.sprite == sprites[10] || spriteRenderer.sprite == sprites[11]) {
+                    spriteRenderer.sprite = sprites[9];
+                }
             }
         }
     }

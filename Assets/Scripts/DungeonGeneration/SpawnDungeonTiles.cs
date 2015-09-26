@@ -15,11 +15,6 @@ public class SpawnDungeonTiles : MonoBehaviour {
 
     public void Awake() {
         tileAmount = PlayerPrefs.GetInt("tileAmount");
-        if (tileAmount < 100) {
-            tileAmount = 100;
-            PlayerPrefs.SetInt("tileAmount", 100);
-        }
-        Debug.Log(PlayerPrefs.GetInt("tileAmount"));
         coordinates = new List<Vector2>();
         Vector3 spawnPos = new Vector3(transform.position.x,transform.position.y,player.transform.position.z);
         Instantiate(player, spawnPos, transform.rotation);

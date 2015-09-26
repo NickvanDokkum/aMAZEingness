@@ -7,7 +7,8 @@ public class Menu : MonoBehaviour {
     public GameObject continueButton;
 
     void Start() {
-        if (PlayerPrefs.GetInt("tileAmount") < 100) {
+        Screen.SetResolution(800, 500, false);
+        if (PlayerPrefs.GetInt("tileAmount") <= 100) {
             continueButton.GetComponent<Button>().interactable = false;
         }
     }
