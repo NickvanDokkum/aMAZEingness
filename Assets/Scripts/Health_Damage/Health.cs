@@ -7,8 +7,14 @@ public class Health : MonoBehaviour {
     HPbar hpbar;
     PlaySound playSound;
     bool vulnerable = true;
+    bool changedColor = false;
+    SpriteRenderer spriteRenderer;
 
     void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) {
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
         if (tag == "Player") {
             hpbar = GameObject.Find("HP").GetComponent<HPbar>();
         }
@@ -21,15 +27,26 @@ public class Health : MonoBehaviour {
             if (HP <= 0) {
                 Death();
             }
+            else {
+                ChangeColor();
+                Invoke("ChangeColor", 0.125f);
+            }
             playSound.StartPlaySound(0);
             vulnerable = false;
+            Invoke("RemoveGodMode", 0.25f);
             if (tag == "Player") {
                 hpbar.ChangeHP(true);
-                Invoke("RemoveGodMode", 0.25f);
             }
-            else {
-                Invoke("RemoveGodMode", 0.1f);
-            }
+        }
+    }
+    void ChangeColor() {
+        if (!changedColor) {
+            spriteRenderer.color = new Color(1, 0.5f, 0.5f, 1);
+            changedColor = true;
+        }
+        else {
+            spriteRenderer.color = new Color(1, 1, 1, 1);
+            changedColor = false;
         }
     }
     void Heal(int healing) {
