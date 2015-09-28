@@ -6,10 +6,15 @@ public class Chest : MonoBehaviour {
     public Sprite[] sprites;
     bool opening = false;
     public GameObject Pickup;
+    PlaySound playSound;
 
+    void Start() {
+        playSound = GetComponent<PlaySound>();
+    }
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Player") {
             OpenChest();
+            playSound.StartPlaySound(0);
         }
     }
     void OpenChest() {

@@ -4,7 +4,7 @@ using System.Collections;
 public class ResetScore : MonoBehaviour {
 
 	// Use this for initialization
-    void Start() {
+    void Awake() {
         PlayerPrefs.SetInt("tileAmount", 100);
 	}
 }

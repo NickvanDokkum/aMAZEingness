@@ -9,9 +9,11 @@ public class BearTrap : MonoBehaviour {
     public int range = 4;
     bool armed = false;
     public GameObject bear;
+    PlaySound playSound;
 
     void Start() {
         player = GameObject.FindWithTag("Player").transform;
+        playSound = GetComponent<PlaySound>();
     }
     void Update() {
         Vector3 difference = player.position - gameObject.transform.position;
@@ -26,9 +28,10 @@ public class BearTrap : MonoBehaviour {
         }
     }
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
             TrapClosing();
             other.gameObject.SendMessage("Damage", 1);
+            playSound.StartPlaySound(0);
         }
     }
     void TrapClosing() {

@@ -5,12 +5,14 @@ public class Health : MonoBehaviour {
 
     public int HP = 5;
     HPbar hpbar;
+    PlaySound playSound;
     bool vulnerable = true;
 
     void Start() {
         if (tag == "Player") {
             hpbar = GameObject.Find("HP").GetComponent<HPbar>();
         }
+        playSound = GetComponent<PlaySound>();
     }
 
     void Damage(int damage) {
@@ -19,11 +21,15 @@ public class Health : MonoBehaviour {
             if (HP <= 0) {
                 Death();
             }
+            playSound.StartPlaySound(0);
+            vulnerable = false;
             if (tag == "Player") {
                 hpbar.ChangeHP(true);
+                Invoke("RemoveGodMode", 0.25f);
             }
-            vulnerable = true;
-            Invoke("RemoveGodMode", 0.25f);
+            else {
+                Invoke("RemoveGodMode", 0.1f);
+            }
         }
     }
     void Heal(int healing) {
@@ -57,12 +63,6 @@ public class Health : MonoBehaviour {
     }
 
     void Death() {
-        if (tag != "Player") {
-            Destroy(this.gameObject);
-            Destroy(this);
-        }
-        else {
-            Application.LoadLevel(Application.loadedLevel);
-        }
+        gameObject.GetComponent<Death>().Die();
     }
 }

@@ -17,6 +17,7 @@ public class Attack : MonoBehaviour {
         InvokeRepeating("NextSprite", 0, 0.2f);
         SendMessage("AttackStart");
         colliders[AttackDir].enabled = true;
+        GetComponent<PlaySound>().StartPlaySound(2);
     }
     void StopAttack() {
         colliders[AttackDir].enabled = false;

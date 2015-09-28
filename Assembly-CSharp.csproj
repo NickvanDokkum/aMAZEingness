@@ -47,7 +47,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Art\AnimationScript.cs" />
      <Compile Include="Assets\Scripts\Art\ArtMovement.cs" />
+     <Compile Include="Assets\Scripts\Art\EddieDecay.cs" />
      <Compile Include="Assets\Scripts\Art\FloorSelecter.cs" />
+     <Compile Include="Assets\Scripts\Art\PlaySound.cs" />
      <Compile Include="Assets\Scripts\Creature\AI.cs" />
      <Compile Include="Assets\Scripts\Creature\Attack.cs" />
      <Compile Include="Assets\Scripts\Creature\Movement.cs" />
@@ -55,19 +57,26 @@
      <Compile Include="Assets\Scripts\DungeonGeneration\SpawnDungeonTiles.cs" />
      <Compile Include="Assets\Scripts\DungeonGeneration\TileRandomization.cs" />
      <Compile Include="Assets\Scripts\DungeonGeneration\WallSelector.cs" />
+     <Compile Include="Assets\Scripts\Health_Damage\Death.cs" />
      <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />
      <Compile Include="Assets\Scripts\Misc\Chest.cs" />
      <Compile Include="Assets\Scripts\Misc\Exit.cs" />
      <Compile Include="Assets\Scripts\Misc\HPPickup.cs" />
      <Compile Include="Assets\Scripts\Misc\Traps\BearTrap.cs" />
+     <Compile Include="Assets\Scripts\Misc\Traps\DistanceMuting.cs" />
      <Compile Include="Assets\Scripts\Misc\Traps\FireSpitter.cs" />
      <Compile Include="Assets\Scripts\SassafrasBeach\ChangeTextAfterTime.cs" />
      <Compile Include="Assets\Scripts\SassafrasBeach\DestroyWhenOutOfRange.cs" />
      <Compile Include="Assets\Scripts\SassafrasBeach\IntoTheDungeon.cs" />
      <Compile Include="Assets\Scripts\SassafrasBeach\ResetScore.cs" />
      <Compile Include="Assets\Scripts\SassafrasBeach\StartTimerAfterTriggerEnter.cs" />
-     <Compile Include="Assets\Scripts\UI\InGame\HPbar.cs" />
-     <Compile Include="Assets\Scripts\UI\StartMenu\Menu.cs" />
+     <Compile Include="Assets\Scripts\UI\CurrentLevel.cs" />
+     <Compile Include="Assets\Scripts\UI\DeathScreen.cs" />
+     <Compile Include="Assets\Scripts\UI\EnableDeathScreen.cs" />
+     <Compile Include="Assets\Scripts\UI\HPbar.cs" />
+     <Compile Include="Assets\Scripts\UI\Menu.cs" />
+     <Compile Include="Assets\Scripts\UI\PauzeMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\QuitGame.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

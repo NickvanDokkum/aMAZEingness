@@ -34,16 +34,24 @@ public class TileRandomization : MonoBehaviour {
         Instantiate(wall, spawnPos, transform.rotation);
         if (!noItems) {
             //Placing Random Stuff
-            int Item = Random.Range(0, 100);
+            int difficulty;
+            if ((PlayerPrefs.GetInt("tileAmount") - 100) / 25 >= 10) {
+                difficulty = 10;
+            }
+            else {
+                difficulty = (PlayerPrefs.GetInt("tileAmount") - 100) / 25;
+            }
+            float Item = Random.Range(0, 200);
             spawnPos = gameObject.transform.position;
             spawnPos.z -= 5;
-            if (Item < 1) {
+            if (Item < (12 - difficulty)) {
                 Instantiate(chest, spawnPos, transform.rotation);
             }
-            else if (Item < 21) {
+            else if (Item < (52 - difficulty)) {
                 Instantiate(firespitter, spawnPos, transform.rotation);
             }
-            else if (Item < 26) {
+            else if (Item < 54) {
+                spawnPos.y -= 1;
                 Instantiate(bearTrap, spawnPos, transform.rotation);
             }
         }

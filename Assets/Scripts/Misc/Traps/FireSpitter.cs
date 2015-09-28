@@ -8,6 +8,7 @@ public class FireSpitter : MonoBehaviour {
     public Sprite[] sprites;
     bool curUp = true;
     BoxCollider2D theCollider;
+    PlaySound playSound;
 
     void Start() {
         if (curSprite == 0) {
@@ -16,9 +17,10 @@ public class FireSpitter : MonoBehaviour {
                 curUp = false;
             }
         }
-        InvokeRepeating("ChangeFire", 0.25f, 0.25f);
+        InvokeRepeating("ChangeFire", 0, 0.25f);
         spriteRenderer = GetComponent<SpriteRenderer>();
         theCollider = GetComponent<BoxCollider2D>();
+        playSound = GetComponent<PlaySound>();
     }
 
     void ChangeFire() {
@@ -26,6 +28,9 @@ public class FireSpitter : MonoBehaviour {
             curSprite++;
             if (curSprite == 3) {
                 curUp = false;
+            }
+            if (curSprite == 1) {
+                playSound.StartPlaySound(0);
             }
         }
         else {
