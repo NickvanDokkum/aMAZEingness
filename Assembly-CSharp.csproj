@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\SassafrasBeach\ResetScore.cs" />
      <Compile Include="Assets\Scripts\SassafrasBeach\StartTimerAfterTriggerEnter.cs" />
      <Compile Include="Assets\Scripts\UI\CurrentLevel.cs" />
+     <Compile Include="Assets\Scripts\UI\Darkness.cs" />
      <Compile Include="Assets\Scripts\UI\DeathScreen.cs" />
      <Compile Include="Assets\Scripts\UI\EnableDeathScreen.cs" />
      <Compile Include="Assets\Scripts\UI\HPbar.cs" />

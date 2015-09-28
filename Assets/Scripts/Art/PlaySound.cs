@@ -6,7 +6,7 @@ public class PlaySound : MonoBehaviour {
     AudioSource audioSource;
     public AudioClip[] audioFiles;
 
-    void Start() {
+    void Awake() {
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null) {
             audioSource = gameObject.AddComponent<AudioSource>();

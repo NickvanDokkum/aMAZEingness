@@ -17,9 +17,9 @@ public class DeathScreen : MonoBehaviour {
         }
     }
     public void Restart() {
-        Application.LoadLevel(Application.loadedLevel);
+        GameObject.Find("TransitionScreen").GetComponent<Darkness>().Change(true, Application.loadedLevel);
     }
     void BackToMenu() {
-        Application.LoadLevel(0);
+        GameObject.Find("TransitionScreen").GetComponent<Darkness>().Change(true, 0);
     }
 }

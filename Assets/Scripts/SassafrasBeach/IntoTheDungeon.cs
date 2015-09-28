@@ -4,6 +4,6 @@ using System.Collections;
 public class IntoTheDungeon : MonoBehaviour {
 
 	void OnTriggerEnter2D(){
-        Application.LoadLevel(2);
+        GameObject.Find("TransitionScreen").GetComponent<Darkness>().Change(true, 2);
     }
 }

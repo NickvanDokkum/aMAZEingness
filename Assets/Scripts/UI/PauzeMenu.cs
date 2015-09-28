@@ -19,6 +19,6 @@ public class PauzeMenu : MonoBehaviour {
     }
     public void BackToMenu() {
         Time.timeScale = 1;
-        Application.LoadLevel(0);
+        GameObject.Find("TransitionScreen").GetComponent<Darkness>().Change(true, 0);
     }
 }

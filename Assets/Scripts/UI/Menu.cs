@@ -13,9 +13,9 @@ public class Menu : MonoBehaviour {
         }
     }
     public void Continue() {
-        Application.LoadLevel(2);
+        GameObject.Find("TransitionScreen").GetComponent<Darkness>().Change(true, 2);
     }
     public void NewGame() {
-        Application.LoadLevel(1);
+        GameObject.Find("TransitionScreen").GetComponent<Darkness>().Change(true, 1);
     }
 }
