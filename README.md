@@ -1,5 +1,7 @@
 # Eddie The Monkey
 
+here is a link to my site on this project: http://www.nickvandokkum.com/eddie-the-monkey/
+
 You play as Eddie the Monkey, an adventurous little monkey who jumps into “The Pit”; an enchanted dungeon.
 Eddie must survive.
 The dungeons are randomly generated and the levels are endless.
